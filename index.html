@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Note List</title>
+</head>
+
+<body>
+    <div class="container" style="margin-top:20px;">
+
+        <h1 style="color: gold; text-align: center; margin: 20px !important;">Note App</h1>
+
+        <div class="row">
+            <div class="col-md ">
+                <div class="card" >
+                    <div class="card-header"> Note App
+                    </div>
+                    <div class="card-body">
+                        <form id="note-form" name="form">
+                            <div class="form-row">
+                                <div class="form-group col">
+                                   <input class="form-control mb-3 noteTitle" type="textarea" name="note" id="note"
+                                    placeholder="Not Başlığı Giriniz Örn: Mutfak İhtiyaçları">
+                                    <textarea class="form-control noteTextArea" id="exampleFormControlTextarea1" rows="3" placeholder="Notu Giriniz...."></textarea>
+                                  </div>
+                            </div>
+                            <button type="submit" class="btn btn-warning">Add Note<br></button>
+                        </form>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <br>           
+        </div>
+
+        <div class="row mt-5 noteRow">
+            <!-- <div class="col-md-4">
+                <div class="card" >
+                    <div class="card-header"> Note App
+                    </div>
+                    <div class="card-body">
+                        <form id="note-form" name="form" class="overflow" style="height: 128px;">
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <p class="noteArea">Lorem ipsum dolor sit amtum sunt nobis praesentium blanditiis, quas iusto ducimus reprehenderit consectetur iure dolore quaerat. In consequatur voluptas quibusdam molestiae autem inventore totam.</p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header"> Note App
+                    </div>
+                    <div class="card-body">
+                        <form id="note-form" class="overflow" style="height: 128px;" >
+                            <div class="form-row">
+                                <div class="form-group col">
+                                   <p class="deneme"> tatibus minima eveniet commodi atque? Officia, blanditiis fugit commodi quo maiores, sequi iure quos magnam totam numquam obcaecati. Ut temporibus dolores, minus quis sapiente recusandae voluptatibus est!
+                                   Voluptatum placeat at tenetur provident consequatur obcaecati molestias quas doloribus ex tempore enim voluptatem, architecto velit consectetur, nesciunt ipsum ab, optio animi vel dolor fuga laboriosam quibusdam vitae eum. Iste. ipsum dolor sit amet consectetur adipisicing elit. Enim, minus odio aut sint iste vel quaerat officiis eveniet libero quo dolorem explicabo nobis tenetur, cum esse cumque omnis nulla id! ique? Rritatis, ipsum fuga cum necessitatibus illum illo non eveniet perspiciatis porro? Sequi beatae doloribus ratione exercitationem repellendus?</p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header"> Note App
+                    </div>
+                    <div class="card-body">
+                        <form id="note-form" class="overflow" style="height: 128px;" >
+                            <div class="form-row">
+                                <div class="form-group col">
+                                   <p class="deneme">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem doloribus officia sed architecto ad. Qui magnam amet eaque consequuntur quas laboriosam quasi magni esse id quod ad, veniam veritatis? Officia.
+                                   Aliquid maxime nam ex rem recusandae quas bcaecati molestias quas doloribus ex tempore enim voluptatem, architecto velit consectetur, nesciunt ipsum ab, optio animi vel dolor fuga laboriosam quibusdam vitae eum. Iste. ipsum dolor sit amet consectetur adipisicing elit. Enim, minus odio aut sint iste vel quaerat officiis eveniet libero quo dolorem explicabo nobis tenetur, cum esse cumque omnis nulla id! ique? Rritatis, ipsum fuga cum necessitatibus illum illo non eveniet perspiciatis porro? Sequi beatae doloribus ratione exercitationem repellendus?</p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <!-- <div class="row mt-4">
+            <div class="col-md">
+                <div class="card" >
+                    <div class="card-header"> Note App
+                    </div>
+                    <div class="card-body">
+                        <form id="note-form" name="form">
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <input class="form-control" type="textarea" name="note" id="note"
+                                        placeholder="Notunuzu Girin">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-warning">Add Note<br></button>
+                        </form>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md">
+                <div class="card">
+                    <div class="card-header"> Note App
+                    </div>
+                    <div class="card-body">
+                        <form id="note-form" name="form">
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <input class="form-control" type="textarea" name="note" id="note"
+                                        placeholder="Notunuzu Girin">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-warning">Add Note<br></button>
+                        </form>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="card">
+                    <div class="card-header"> Note App
+                    </div>
+                    <div class="card-body">
+                        <form id="note-form" name="form">
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <input class="form-control" type="textarea" name="note" id="note"
+                                        placeholder="Notunuzu Girin">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-warning">Add Note<br></button>
+                        </form>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="card">
+                    <div class="card-header"> Note App
+                    </div>
+                    <div class="card-body">
+                        <form id="note-form" name="form">
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <input class="form-control" type="textarea" name="note" id="note"
+                                        placeholder="Notunuzu Girin">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-warning">Add Note<br></button>
+                        </form>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div> -->
+        
+
+
+
+        <!-- <div class="container" style="margin-top: 200px;">
+            <div class="card">
+                <div class="card-header">
+                    Note App
+                </div>
+                <div class="card-body">
+                   <input class="form-control" type="text" name="" id="">
+                    <button class="btn btn-warning">Add Note</button>
+                </div>
+                <hr>
+            </div>
+        </div> -->
+
+
+    </div>
+
+
+<style>
+  .overflow{
+      overflow: hidden;
+  }
+</style>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
