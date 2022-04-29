@@ -15,17 +15,20 @@
 <body>
     <div class="container" style="margin-top:20px;">
 
-        <h1 style="color: gold; text-align: center; margin: 20px !important;">Note App</h1>
+        <h1 style="color: white; text-align: center; margin: 20px !important;">Note App</h1>
 
         <div class="row">
             <div class="col-md ">
                 <div class="card" >
-                    <div class="card-header"> Note App
+                    <div class="card-header" style="padding:0 20px 0 20px;"> <span style="margin-top: 21px; margin-bottom: 0; font-size: 18px;"> Note App</span>  
+                        <input class="form-control mb-3 filterNotes" type="textarea" name="note" id="note"
+                                    placeholder="Note Arayın..." style="width: 25%; margin-top: 15px; margin-bottom: 0;">
                     </div>
                     <div class="card-body">
                         <form id="note-form" name="form">
                             <div class="form-row">
                                 <div class="form-group col">
+                                    
                                    <input class="form-control mb-3 noteTitle" type="textarea" name="note" id="note"
                                     placeholder="Not Başlığı Giriniz Örn: Mutfak İhtiyaçları">
                                     <textarea class="form-control noteTextArea" id="exampleFormControlTextarea1" rows="3" placeholder="Notu Giriniz...."></textarea>
@@ -46,28 +49,7 @@
         </div>
 
         <div class="row mt-5 noteRow">           
-            <!-- <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header">
-                       <span>Note App</span>
-                       <div>
-                        <a href="" class="button btn-edit">Edit</a>
-                        <a class="button btn-delete" href="">Delete</a>
-                       </div>
-                       
-                    </div>
-                    <div class="card-body">
-                        <form id="note-form" class="overflow" style="height: 128px;" >
-                            <div class="form-row">
-                                <div class="form-group col">
-                                   <p class="deneme">Lorem ipsum dolor sit magni esse id quod ad, veniam veritatis? Officia.
-                                   Aliquid maxime nam ex rem rtatem, arlendus?</p>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div> -->
+            
         </div>
     </div>
 
@@ -89,6 +71,7 @@
       opacity: 0.8;
       transition: .6s;
   }
+  
 </style>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

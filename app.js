@@ -4,8 +4,32 @@ const noteArea = document.querySelector(".noteArea")
 const denemeNot = document.querySelector(".denemeNot")
 const noteRow = document.querySelector(".noteRow")
 const noteTitle = document.querySelector(".noteTitle")
+const filterNotes = document.querySelector(".filterNotes")
 
-document.addEventListener("DOMContentLoaded", LoadAllNotesToUI)
+
+eventListener()
+function eventListener(){
+    document.addEventListener("DOMContentLoaded", LoadAllNotesToUI)
+    noteForm.addEventListener("submit", noteData)
+    noteRow.addEventListener("click", deleteNotesFromUI)
+    filterNotes.addEventListener("keyup", filterNote)
+}
+
+function filterNote(){
+    const value = filterNotes.value;
+    const noteLists = document.querySelectorAll(".noteLists");
+
+    noteLists.forEach(noteList => {
+       const filterText = noteList.lastElementChild.lastElementChild.textContent.toLocaleLowerCase().trim()
+       if(filterText.indexOf(value) === -1){
+        noteList.setAttribute("style", "display: none !important")
+    } else{
+        noteList.setAttribute("style", "display: block !important")
+    }
+    })
+
+}
+
 
 function LoadAllNotesToUI() {
     const values = getNoteValueFromStorage()
@@ -17,7 +41,6 @@ function LoadAllNotesToUI() {
 
 }
 
-noteForm.addEventListener("submit", noteData)
 function noteData(e) {
 
 
@@ -81,7 +104,7 @@ function addNoteToStorage(noteValue1, titleValue) {
 
 function denemeNotUI(noteValue, titleValue) {
     noteRow.innerHTML += `
-    <div class="col-md-4 mt-3">
+    <div class="col-md-4 mt-3 noteLists">
     <div class="card">
     <div class="card-header">
     <span>${titleValue}</span>
@@ -105,17 +128,24 @@ function denemeNotUI(noteValue, titleValue) {
 
 }
 
-noteRow.addEventListener("click", deleteNotesFromUI)
 function deleteNotesFromUI(e) {
+
+    
+
+    
     if (e.target.className == "button btn-delete") {
+        if(confirm("Silmek İstediğinize Emin misiniz?")){
         e.target.parentElement.parentElement.parentElement.remove();
         const firstChild = e.target.parentElement.parentElement.firstElementChild.textContent;
         const secondChild = e.target.parentElement.parentElement.parentElement.children[1].textContent.trim();
         console.log(secondChild)
 
         deleteNotesFromStorage(firstChild, secondChild)
+        }
 
     }
+
+    
 
 
     e.preventDefault()
