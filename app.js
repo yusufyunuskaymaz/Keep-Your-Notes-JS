@@ -5,7 +5,7 @@ const denemeNot = document.querySelector(".denemeNot")
 const noteRow = document.querySelector(".noteRow")
 const noteTitle = document.querySelector(".noteTitle")
 const filterNotes = document.querySelector(".filterNotes")
-
+const btnDelete = document.querySelector("#btnDelete")
 
 eventListener()
 function eventListener(){
@@ -13,6 +13,16 @@ function eventListener(){
     noteForm.addEventListener("submit", noteData)
     noteRow.addEventListener("click", deleteNotesFromUI)
     filterNotes.addEventListener("keyup", filterNote)
+    btnDelete.addEventListener("click", deleteAllNotes)
+
+}
+
+function deleteAllNotes(){
+    if(confirm("Tüm Notlar Kalıcı Olarak Silinecek...")){
+        noteRow.innerHTML = "";
+        localStorage.removeItem("noteTitles")
+        localStorage.removeItem("noteValue")
+    }
 }
 
 function filterNote(){
@@ -130,9 +140,6 @@ function denemeNotUI(noteValue, titleValue) {
 
 function deleteNotesFromUI(e) {
 
-    
-
-    
     if (e.target.className == "button btn-delete") {
         if(confirm("Silmek İstediğinize Emin misiniz?")){
         e.target.parentElement.parentElement.parentElement.remove();
