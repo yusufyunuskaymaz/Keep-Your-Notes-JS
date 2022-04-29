@@ -9,22 +9,11 @@ document.addEventListener("DOMContentLoaded", LoadAllNotesToUI)
 
 function LoadAllNotesToUI(){
     const values = getNoteValueFromStorage()
-    
-    values.forEach(value => {
-        denemeNotUI(value)
-    });
-
-}
-
-document.addEventListener("DOMContentLoaded", LoadAllNotesToUI2)
-
-function LoadAllNotesToUI2(){
     const titles = getNotesFromStorage()
-    
-    titles.forEach(title => {
-        denemeNotUI(title)
-    });
-   
+
+    for(i = 0; i < values.length; i++){
+        denemeNotUI(values[i], titles[i])
+    }
 
 }
 
@@ -88,8 +77,13 @@ function denemeNotUI(noteValue, titleValue) {
     noteRow.innerHTML += `
     <div class="col-md-4 mt-3">
     <div class="card">
-        <div class="card-header"> ${titleValue}
-        </div>
+    <div class="card-header">
+    <span>${titleValue}</span>
+    <div>
+     <a href class="button btn-edit">Edit</a>
+     <a href class="button btn-delete" >Delete</a>
+    </div> 
+ </div>
         <div class="card-body">
             <form id="note-form" class="overflow" style="height: 80px;" >
                 <div class="form-row">
@@ -105,5 +99,43 @@ function denemeNotUI(noteValue, titleValue) {
 
 }
 
+noteRow.addEventListener("click", deleteNotesFromUI)
+function deleteNotesFromUI(e){
+    if(e.target.className == "button btn-delete"){
+        e.target.parentElement.parentElement.parentElement.remove();
+        const firstChild = e.target.parentElement.parentElement.firstElementChild.textContent;
+        const secondChild = e.target.parentElement.parentElement.parentElement.children[1].textContent.trim();
+        console.log(secondChild)
 
+        deleteNotesFromStorage(firstChild,secondChild)
+
+    }
+
+    
+    e.preventDefault()
+}
+
+function deleteNotesFromStorage(firstChild, secondChild){
+
+    const titles = getNotesFromStorage()
+    const values = getNoteValueFromStorage()
+
+
+    titles.forEach((title,index) => {
+       if(title === firstChild){
+        titles.splice(index,1)
+        console.log(title,firstChild)
+       }
+    });
+    localStorage.setItem("noteTitles", JSON.stringify(titles))
+
+    values.forEach((value,index) => {
+        if(value === secondChild){
+            values.splice(index,1)
+         console.log(value,secondChild)
+        }
+     });
+     localStorage.setItem("noteValue", JSON.stringify(values))
+
+}
 
